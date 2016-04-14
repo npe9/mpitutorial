@@ -4,7 +4,7 @@ MPICC?=mpicc
 all: ${EXECS}
 
 mpi_hello_world: mpi_hello_world.c
-	${MPICC} -o mpi_hello_world mpi_hello_world.c
+	${MPICC} -static -o mpi_hello_world mpi_hello_world.c -lmpi -lopen-rte -lopen-pal -lrt -lutil -lm
 
 clean:
 	rm -f ${EXECS}
